@@ -1,8 +1,8 @@
 let hairs = [];
 
-let hairCount = 10000;
+let hairCount = 25000;
 let segments = 6;
-let segmentLength = 10;
+let segmentLength = 12;
 
 let oldMouse;
 let mouseVelocity;
