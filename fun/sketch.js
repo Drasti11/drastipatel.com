@@ -11,9 +11,21 @@ let fingers = [-20,-10,0,10,20];
 
 let relaxation = 0.002;
 
+let openHand;
+let strokeHand;
+
+function preload(){
+
+    openHand = loadImage("openhand.png");
+    strokeHand = loadImage("strokehand.png");
+
+}
+
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
+
+  noCursor();
 
   // create hair roots across a head shape
 
@@ -52,10 +64,34 @@ oldMouse.set(mouseX, mouseY);
 
   }
 
-  
+  drawHand();
 
 }
 
+function drawHand(){
+
+    let hand;
+
+    if(mouseIsPressed){
+
+        hand = strokeHand;
+
+    } else {
+
+        hand = openHand;
+
+    }
+
+
+    image(
+    hand,
+    mouseX - 20,
+    mouseY - 10,
+    60,
+    60
+    );
+
+}
 
 
 class Hair {
